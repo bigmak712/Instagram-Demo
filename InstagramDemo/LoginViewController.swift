@@ -27,23 +27,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onSignIn(_ sender: Any) {
+        // Login with the username and password in the text fields
         PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
             if user != nil {
-                print("logged in!")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
-        
     }
 
     @IBAction func onSignUp(_ sender: Any) {
+        // Create a new user and set its username and password
         let newUser = PFUser()
-        
         newUser.username = usernameField.text
         newUser.password = passwordField.text
+        
+        // Sign-up the new user
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if success {
-                print("created a user!")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             else {
