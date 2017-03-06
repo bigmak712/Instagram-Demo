@@ -84,27 +84,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="COy-te-egz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="240" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="COy-te-egz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="161" id="7ZG-KA-jUZ" customClass="PostCell" customModule="InstagramDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="161"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="240" id="7ZG-KA-jUZ" customClass="PostCell" customModule="InstagramDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ZG-KA-jUZ" id="ZAn-1t-nOd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nli-YE-OKh">
-                                                    <rect key="frame" x="8" y="8" width="304" height="120"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="200"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="120" id="1at-Oe-D9A"/>
+                                                        <constraint firstAttribute="height" constant="200" id="1at-Oe-D9A"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkC-AS-56X">
-                                                    <rect key="frame" x="8" y="128" width="304" height="24"/>
+                                                    <rect key="frame" x="8" y="216" width="304" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -117,7 +116,7 @@
                                                 <constraint firstItem="gkC-AS-56X" firstAttribute="leading" secondItem="ZAn-1t-nOd" secondAttribute="leading" constant="8" id="TKN-Zr-gXb"/>
                                                 <constraint firstAttribute="bottom" secondItem="gkC-AS-56X" secondAttribute="bottom" constant="8" id="aNi-By-eW9"/>
                                                 <constraint firstAttribute="trailing" secondItem="gkC-AS-56X" secondAttribute="trailing" constant="8" id="eNI-ku-GuZ"/>
-                                                <constraint firstItem="gkC-AS-56X" firstAttribute="top" secondItem="nli-YE-OKh" secondAttribute="bottom" id="qZi-Th-ZRc"/>
+                                                <constraint firstItem="gkC-AS-56X" firstAttribute="top" secondItem="nli-YE-OKh" secondAttribute="bottom" constant="8" id="qZi-Th-ZRc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -129,6 +128,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="COy-te-egz" secondAttribute="trailing" id="9Sz-Dv-ZhO"/>
+                            <constraint firstItem="COy-te-egz" firstAttribute="leading" secondItem="qUz-vj-tFP" secondAttribute="leading" id="ctb-4Y-doE"/>
+                            <constraint firstItem="COy-te-egz" firstAttribute="top" secondItem="qUz-vj-tFP" secondAttribute="top" id="r5a-1f-YN4"/>
+                            <constraint firstAttribute="bottom" secondItem="COy-te-egz" secondAttribute="bottom" id="ypj-fW-lXK"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="tkW-3J-0R0"/>
                     <connections>

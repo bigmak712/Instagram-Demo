@@ -41,6 +41,11 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
         
+        photoImageView.image = nil
+        defaultPhotoLabel.isHidden = false
+        self.captionTextField.text = "Add a caption..."
+        self.captionTextField.textColor = .gray
+        
     }
     
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
@@ -49,9 +54,6 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePickerController.delegate = self
         //imagePickerController.allowsEditing = true
         imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        
-        self.captionTextField.text = ""
-        self.captionTextField.textColor = .black
         
         self.present(imagePickerController, animated: true, completion: nil)
     }
