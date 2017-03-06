@@ -9,20 +9,69 @@
 import UIKit
 import Parse
 
-class InstagramFeedViewController: UIViewController {
+class InstagramFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var feed: [PFObject] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 180
+
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let query = PFQuery(className: "Post")
+        query.order(byDescending: "createdAt")
+        query.limit = 20
+        
+        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) -> Void in
+            if let posts = posts {
+                self.feed = posts
+                self.tableView.reloadData()
+            }
+            else {
+                print(error?.localizedDescription ?? "")
+            }
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return feed.count
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let post = feed[indexPath.row]
+        
+        let photo = post["media"] as! PFFile
+        photo.getDataInBackground { (data: Data?, error: Error?) in
+            if let data = data {
+                cell.photoImageView.image = UIImage(data: data)
+            }
+            else {
+                print(error?.localizedDescription ?? "")
+            }
+        }
+        cell.captionLabel.text = post["caption"] as! String?
+        
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -21,31 +21,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-C3-pra">
-                                <rect key="frame" x="36" y="71" width="244" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Phj-C3-pra">
+                                <rect key="frame" x="32" y="84" width="256" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r1c-Mf-5de">
-                                <rect key="frame" x="36" y="151" width="244" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r1c-Mf-5de">
+                                <rect key="frame" x="32" y="146" width="256" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUm-gq-aFb">
-                                <rect key="frame" x="36" y="263" width="244" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUm-gq-aFb">
+                                <rect key="frame" x="136.5" y="240" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2aN-ae-Qx0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2q-EE-80m">
-                                <rect key="frame" x="36" y="322" width="244" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2q-EE-80m">
+                                <rect key="frame" x="132.5" y="302" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yo0-nD-zp7"/>
@@ -53,6 +49,18 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="K2q-EE-80m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3mE-vp-HXp"/>
+                            <constraint firstItem="rUm-gq-aFb" firstAttribute="top" secondItem="r1c-Mf-5de" secondAttribute="bottom" constant="64" id="4ie-iK-opj"/>
+                            <constraint firstItem="Phj-C3-pra" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="9nB-3k-Dnp"/>
+                            <constraint firstAttribute="trailing" secondItem="Phj-C3-pra" secondAttribute="trailing" constant="32" id="Cnk-Df-H0h"/>
+                            <constraint firstItem="Phj-C3-pra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="a06-P3-vwM"/>
+                            <constraint firstItem="r1c-Mf-5de" firstAttribute="top" secondItem="Phj-C3-pra" secondAttribute="bottom" constant="32" id="bE4-xg-4V4"/>
+                            <constraint firstItem="rUm-gq-aFb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dmH-h9-W3Y"/>
+                            <constraint firstItem="r1c-Mf-5de" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="32" id="iHh-Mb-2QR"/>
+                            <constraint firstItem="K2q-EE-80m" firstAttribute="top" secondItem="rUm-gq-aFb" secondAttribute="bottom" constant="32" id="nVU-va-Z6Q"/>
+                            <constraint firstAttribute="trailing" secondItem="r1c-Mf-5de" secondAttribute="trailing" constant="32" id="yqj-7H-NwC"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="r1c-Mf-5de" id="Fei-KL-Td5"/>
@@ -123,6 +131,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="tkW-3J-0R0"/>
+                    <connections>
+                        <outlet property="tableView" destination="COy-te-egz" id="5JI-Cf-MAK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sev-dC-eu6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,6 +171,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVr-n7-PR5">
                                 <rect key="frame" x="135.5" y="354" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="onSubmitButton:" destination="KS2-sE-Yfi" eventType="touchUpInside" id="wq2-R7-9Fp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to take or select a photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpN-ym-FrD">
                                 <rect key="frame" x="51" y="116" width="218" height="21"/>
@@ -230,9 +244,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pm-FD-O3V">
-                                <rect key="frame" x="122" y="225" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pm-FD-O3V">
+                                <rect key="frame" x="136.5" y="148" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogoutButton:" destination="U6E-GR-zrx" eventType="touchUpInside" id="h4p-D0-29u"/>
@@ -241,6 +254,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Pm-FD-O3V" firstAttribute="top" secondItem="yO0-4f-9wZ" secondAttribute="bottom" constant="128" id="MZf-Dw-esa"/>
+                            <constraint firstItem="2Pm-FD-O3V" firstAttribute="centerX" secondItem="AXu-ki-Co1" secondAttribute="centerX" id="oRC-Nm-VQo"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="I28-IC-RfP"/>
                 </viewController>

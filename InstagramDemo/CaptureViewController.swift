@@ -28,12 +28,30 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onSubmitButton(_ sender: Any) {
+        let postImage = resize(image: self.photoImageView.image!, newSize: CGSize(width: 600, height: 600))
+        let caption = self.captionTextField.text
+        Post.postUserImage(image: postImage, withCaption: caption) { (success: Bool, error: Error?) in
+            if success {
+                self.tabBarController?.selectedIndex = 0
+                //print("I posted to Parse")
+            }
+            else{
+                print(error?.localizedDescription ?? "")
+            }
+        }
+        
+    }
+    
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
         
         imagePickerController.delegate = self
         //imagePickerController.allowsEditing = true
         imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        self.captionTextField.text = ""
+        self.captionTextField.textColor = .black
         
         self.present(imagePickerController, animated: true, completion: nil)
     }
@@ -43,10 +61,11 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Error when picking photo")
         }
-        
         photoImageView.image = image
         
         defaultPhotoLabel.isHidden = true
+        self.captionTextField.text = ""
+        self.captionTextField.textColor = .black
         
         dismiss(animated: true, completion: nil)
     }
@@ -54,6 +73,18 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
         defaultPhotoLabel.isHidden = false
+    }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
     }
 
     /*
